@@ -29,17 +29,17 @@ public class RepairStationInfoPrinter {
 
     void printCarStatus(Car car) {
             String threadInfo = String.format("%s [Konsument, wątek nr. %d]\t", DateUtils.getDate(new Date()), Thread.currentThread().getId());
-            String takeOrderInfo = "";
+            String takeCarInfo = "";
             String bufferSizeInfo = "";
 
             if (car.isBeingPrepared()) {
-                takeOrderInfo = TAKE_CAR_INFO;
+                takeCarInfo = TAKE_CAR_INFO;
                 bufferSizeInfo = getBufferSizeInfo();
             }
 
             String stationNumberInfo = getStationNumberInfo();
-            String orderInfo = String.format("Samochód o id: %d\tStatus: %s\t",car.getId(), car.getCarState());
-            System.out.println(threadInfo + takeOrderInfo + stationNumberInfo + orderInfo + bufferSizeInfo);
+            String carInfo = String.format("Samochód o id: %d\tStatus: %s\t",car.getId(), car.getCarState());
+            System.out.println(threadInfo + takeCarInfo + stationNumberInfo + carInfo + bufferSizeInfo);
     }
 
     public void printCloseRepairStation(Integer stationNumber){

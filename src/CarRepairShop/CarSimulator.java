@@ -5,11 +5,11 @@ import java.util.Random;
 public class CarSimulator implements Runnable {
     private static final Random random = new Random();
     private final CarRepairShop carRepairShop;
-    private final int ordersNumber;
+    private final int carsNumber;
 
-    public CarSimulator(CarRepairShop carRepairShop, int ordersNumber) {
+    public CarSimulator(CarRepairShop carRepairShop, int carsNumber) {
         this.carRepairShop = carRepairShop;
-        this.ordersNumber = ordersNumber;
+        this.carsNumber = carsNumber;
     }
 
     private void tryToSleep(long timeInMs) {
@@ -22,7 +22,7 @@ public class CarSimulator implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < ordersNumber; ++i) {
+        for (int i = 0; i < carsNumber; ++i) {
             tryToSleep(new Random().nextInt(500));
             carRepairShop.makeCar(3, "Hyundai", "Kona", "Nie działa");
             tryToSleep(new Random().nextInt(3500) + 500);

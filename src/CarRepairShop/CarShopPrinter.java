@@ -26,8 +26,8 @@ public class CarShopPrinter {
     }
 
     public void printInfoAfterPuttingIntoBuffer(Car car) {
-        String newOrderInfo = String.format("%s%s%n", NEW_CAR_IN_PARKING, car);
-        System.out.println(getThreadInfo() + newOrderInfo + getBufferInfo() + "\n");
+        String newCarInfo = String.format("%s%s%n", NEW_CAR_IN_PARKING, car);
+        System.out.println(getThreadInfo() + newCarInfo + getBufferInfo() + "\n");
     }
 
     private String getBufferInfo() {

@@ -2,13 +2,13 @@ import CarRepairShop.CarRepairShop;
 
 public class AppParameters {
     private final int processingStationsNumber;
-    private final int orderSimulatorsNumber;
-    private final int ordersPerSimulator;
+    private final int carSimulatorsNumber;
+    private final int carsPerSimulator;
     private CarRepairShop carRepairShop;
 
     public AppParameters(Builder builder) {
-        this.orderSimulatorsNumber = builder.carSimulatorsNumber;
-        this.ordersPerSimulator = builder.carsPerSimulator;
+        this.carSimulatorsNumber = builder.carSimulatorsNumber;
+        this.carsPerSimulator = builder.carsPerSimulator;
         this.processingStationsNumber = builder.processingStationsNumber;
         this.carRepairShop = builder.carRepairShop;
     }
@@ -18,11 +18,11 @@ public class AppParameters {
     }
 
     public int getCarSimulatorsNumber() {
-        return orderSimulatorsNumber;
+        return carSimulatorsNumber;
     }
 
     public int getCarPerSimulator() {
-        return ordersPerSimulator;
+        return carsPerSimulator;
     }
 
     public CarRepairShop getCarRepairShop() {
@@ -52,13 +52,13 @@ public class AppParameters {
         }
 
         public Builder setCarSimulatorsNumber(
-                int orderSimulatorsNumber) {
-            this.carSimulatorsNumber = orderSimulatorsNumber;
+                int carSimulatorsNumber) {
+            this.carSimulatorsNumber = carSimulatorsNumber;
             return this;
         }
 
-        public Builder setCarsPerSimulator(int ordersPerSimulator) {
-            this.carsPerSimulator = ordersPerSimulator;
+        public Builder setCarsPerSimulator(int carsPerSimulator) {
+            this.carsPerSimulator = carsPerSimulator;
             return this;
         }
 
